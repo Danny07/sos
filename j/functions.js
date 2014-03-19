@@ -23,7 +23,7 @@ $(document).ready(function(){
 	//al enviar el formulario
 	$(':button').click(function(){
 		//información del formulario
-		var formData = new FormData($(".formulario_insert")[0]);
+		var formData = new FormData($(".formulario_archivos")[0]);
 		var message = "";
 		console.log(formData);
 		//hacemos la petición ajax  

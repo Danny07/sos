@@ -1,5 +1,4 @@
 <?php require_once('../Connections/sos.php'); ?>
-<?php require_once('../Connections/sos.php'); ?>
 <?php
 //initialize the session
 if (!isset($_SESSION)) {
@@ -259,7 +258,9 @@ $totalRows_nuevo_servicio = mysql_num_rows($nuevo_servicio);
               <option value='3'>Crear</option>
             </select>
           </label>
+        </form>
           <fieldset class='medio'>
+            <form name="form_funcionalidades" id="form_funcionalidades" enctype="multipart/form-data" class="formulario">
             <legend>Funcionalidades Afectadas</legend>
             Para una mejor comprensión del servicio por favor ingrese las funcionalidades que se ven afectadas<p>
             <input type="hidden" id='n_funcionalidades_afe' value='0'>
@@ -276,28 +277,32 @@ $totalRows_nuevo_servicio = mysql_num_rows($nuevo_servicio);
             <img src="../img/reporte.ico" alt="" id='InsertarFuncionalidades'>
             <div id='funcionalidades'>
             </div>
+            </form>
           </fieldset>
           <fieldset class='medio'>
             <legend>Archivos Soporte del Servicio</legend>
+            <form name="form_funcionalidades" id="form_funcionalidades" enctype="multipart/form-data" class="formulario_archivos">
             Anexe documentos que puedan ayudar a la solución de este servicio.
-            <input name="archivo" type="file" id="imagen" />
-            <input type="button" value="Subir imagen" /><br />
-            <!--div para visualizar mensajes-->
-            <div class="messages"></div><br /><br />
-            <!--div para visualizar en el caso de imagen-->
-            <div class="showImage"></div>            
+              <input name="archivo" type="file" id="imagen" />
+              <input type="button" value="Subir imagen" /><br />
+              <!--div para visualizar mensajes-->
+              <div class="messages"></div><br /><br />
+              <!--div para visualizar en el caso de imagen-->
+              <div class="showImage"></div>
+            </form>
           </fieldset>
-          <label for="" class='tercio'>Procedimiento Realizado
-            <textarea id='c_procedimiento' placeholder='Explique detallamente el procemiento que esta realizando.'></textarea>
-          </label>
-          <label for="" class='tercio'>Resultado Presentado
-            <textarea id='c_procedimiento' placeholder='Sea preciso en el resultado.'></textarea>
-          </label>
-          <label for="" class='tercio'>Resultado Esperado
-            <textarea id='c_procedimiento' placeholder='Sea lo mas detallado posible, en el resultado que deberia arrojar el software.'></textarea>
-          </label>
-          <input type="hidden" name="MM_insert" value="formulario_insert">
-        </form>
+          <form >    
+            <label for="" class='tercio'>Procedimiento Realizado
+              <textarea id='c_procedimiento' placeholder='Explique detallamente el procemiento que esta realizando.'></textarea>
+            </label>
+            <label for="" class='tercio'>Resultado Presentado
+              <textarea id='c_procedimiento' placeholder='Sea preciso en el resultado.'></textarea>
+            </label>
+            <label for="" class='tercio'>Resultado Esperado
+              <textarea id='c_procedimiento' placeholder='Sea lo mas detallado posible, en el resultado que deberia arrojar el software.'></textarea>
+            </label>
+            <input type="hidden" name="MM_insert" value="formulario_insert">
+          </form>
       </fieldset>        
     </section>
     <footer>
